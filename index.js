@@ -15,7 +15,7 @@ client.on("messageCreate", async (message) => {
 
     if (message.content == "디지야")
         message.channel.send("나?")
-    else if (message.content.startsWith("디지야 ")
+    else if (message.content.startsWith("디지야 "))
         cmdHandler.get(client, message)
 })
 
