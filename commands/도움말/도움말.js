@@ -1,4 +1,5 @@
 const {MessageEmbed} = require("discord.js")
+require("dotenv").config()
 
 module.exports = {
   names: ["help", "도움말", "명령어"],
@@ -11,11 +12,11 @@ module.exports = {
     if(!args[0]){
     embed = new MessageEmbed()
       .setColor('#5865f2')
-      .setAuthor({ name: '디지봇', iconURL: '' })
+      .setAuthor({ name: '디지봇', iconURL: process.env.PROFILE_URL })
       .setTitle('**디지봇 도움말**')
       .setDescription(`디지봇이 지원하는 명령어입니다!
 (접두사는 \`디지봇 \`입니다!)`)
-      .setThumbnail('')
+      .setThumbnail(process.env.PROFILE_URL)
       .addFields(
         { name: '도움말', value: '디지봇이 지원하는 명령어의 종류를 알려준답니다!', inline: true },
         { name: '도움말 대화', value: '디지봇과 대화를 할 수 있는 명령어를 알려줘요!', inline: true },
@@ -27,10 +28,10 @@ module.exports = {
     }else{
       embed = new MessageEmbed()
         .setColor('#5865f2')
-        .setAuthor({ name: '디지봇', iconURL: '' })
+        .setAuthor({ name: '디지봇', iconURL: process.env.PROFILE_URL })
         .setTitle(`**디지봇 ${args[0]} 도움말**`)
         .setDescription(`접두사는 \`디지야 \`입니다!`)
-        .setThumbnail('')
+        .setThumbnail(process.env.PROFILE_URL)
         .setTimestamp()
         .setFooter({ text:'Made By DGMetro, Namustu'})
       
